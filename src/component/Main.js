@@ -1,5 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import cake from "../images/cake.png"
+import pizza from "../images/pizza.png"
+import smoothie from "../images/smoothie.png"
+import linha from "../images/linha.png"
 
 const Container = styled.main`
     width:100%;
@@ -13,6 +17,76 @@ const Container = styled.main`
     }
 `
 
+const Options = styled.section`    
+    display: flex;    
+    width: 90%;
+    height: 90vh;
+    margin-top: 10vh;
+    @media only screen and (max-width: 628px) {
+        flex-direction: column;
+        height: 240vh;
+        align-items:center;
+      }  
+    div{
+        display: flex;
+        align-items: center;    
+        flex-direction: column;
+    }
+`
+
+const Box1 = styled.div`
+    img{
+        width: 100%;
+        height: 45vh;
+    }   
+`
+const Box2 = styled.div`
+    background-color:white;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 7px 6px #00000029;
+    @media only screen and (max-width: 628px) {
+        height: 35vh;
+        margin-bottom: 5vh;
+      }  
+    img{
+        width: 3.8vw;
+        height: 0.4vh;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 628px) {
+            width: 5vw;
+          }  
+    }
+    p{
+        font-size: 2.3vw;
+        color: #373737;
+        &:hover {
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 628px) {
+            font-size: 3.5vw;
+          } 
+    }
+`
+
+const SubTitle = styled.h2`
+    margin-top: 15vh;
+    font-size: 2.9vw;
+    color: #373737;
+    @media only screen and (max-width: 628px) {
+        font-size: 4vw;
+        margin-left: ;
+      }  
+`
+
+const Line = styled.img`
+     width: 7.3vw;
+     height: 0.7vh;
+     margin-top: 3vh;
+`
 
 const About = styled.section`
     display:flex;
@@ -58,11 +132,36 @@ const About = styled.section`
         flex-direction:column;
     }
 `
+
 export default function Main() {
 
     return (
         <Container>
-
+            <SubTitle>LATEST RECIPES</SubTitle>
+            <Line src={linha} alt="line" />
+            <Options>
+              <div>
+                <Box1><img src={cake} alt="cake" /></Box1>
+                <Box2>
+                  <img src={linha} alt="line" />  
+                  <p>Red Velvet Cake</p>
+                </Box2>  
+              </div>
+              <div>
+                <Box1><img src={pizza} alt="pizza" /></Box1>
+                <Box2>
+                  <img src={linha} alt="line" /> 
+                  <p>Margherita Pizza</p>
+                </Box2>
+              </div>                  
+              <div>
+                <Box1><img src={smoothie} alt="smoothie" /></Box1>
+                <Box2>
+                  <img src={linha} alt="line" /> 
+                  <p>Peanut Smoothie</p>
+                </Box2>
+              </div>
+            </Options>
             <About>
                 <img src="https://media.graphassets.com/GUzCXIblTuTwGnKKtK7l" alt="Spoon" />
                 <article>
